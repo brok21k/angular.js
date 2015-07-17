@@ -2666,7 +2666,9 @@ var PREFIX_REGEXP = /^((?:x|data)[\:\-_])/i;
  * @param name Name to normalize
  */
 function directiveNormalize(name) {
-  return camelCase(name.replace(PREFIX_REGEXP, ''));
+   if (typeof name != "undefined") {
+      return camelCase(name.replace(PREFIX_REGEXP, ''));
+   }
 }
 
 /**
